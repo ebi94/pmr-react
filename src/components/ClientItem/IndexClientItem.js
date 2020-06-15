@@ -11,10 +11,10 @@ const IndexClientItem = props => {
         <div className="box-client-item">
             <img
                 alt={text}
-                className="rounded-circle img-raised img-product"
+                // className="rounded-circle img-raised img-product"
                 src={image}
                 ></img>
-            <h4>{text}</h4>
+            {/* <h4>{text}</h4> */}
         </div>
     </>
   );

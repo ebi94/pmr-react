@@ -6,7 +6,7 @@ import React from "react";
 
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import IndexHeader from "components/Headers/IndexHeader.js";
+import BackgroundPageHeader from "components/Headers/BackgroundPageHeader.js";
 import CustomFooter from "components/Footers/CustomFooter.js";
 
 // sections for this page
@@ -17,7 +17,7 @@ function ContactUs() {
     <>
       <IndexNavbar />
       <div className="wrapper">
-        <IndexHeader />
+        <BackgroundPageHeader titlePage="Contact Us" backgroundImage={"url(" + require("assets/img/rice.jpg") + ")"} />
         <div className="main">
           <ContactUsElements />
         </div>

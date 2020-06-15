@@ -13,29 +13,28 @@ function CustomFooter() {
               <Col lg="4" sm="12" className="footer-list-item">
                 <h4>Head Office</h4>
                 <div>
-                    <p>Lorem ipsum doret amet</p>
-                    <p>Lorem ipsum doret amet</p>
-                    <p>Lorem ipsum doret amet</p>
+                    <p>NCB BUILDING</p>
+                    <p>Jl. Smapal No. 9 Lengkong Gudang Serpong</p>
+                    <p>Tangerang Selatan 15311</p>
                 </div>
               </Col>
               <Col lg="4" sm="12" className="footer-list-item">
                 <h4>Warehouse</h4>
                 <div>
-                    <p>Lorem ipsum doret amet</p>
-                    <p>Lorem ipsum doret amet</p>
-                    <p>Lorem ipsum doret amet</p>
+                    <p>Depo Tanjung Priuk, Jakarta.</p>
+                    <p>Jakarta, Lampung dan Jawa</p>
                 </div>
               </Col>
               <Col lg="4" sm="12" className="footer-list-item">
                 <h4>Contact</h4>
                 <div>
-                    <p>Phone</p>
+                    <p>+6221 2148 0677</p>
                 </div>
                 <div>
-                    <p>Email</p>
+                    <p>info@paninmasindaraya.com</p>
                 </div>
                 <div>
-                    <p>Email</p>
+                    <p>sales@paninmasindaraya.com</p>
                 </div>
               </Col>
             </Row>

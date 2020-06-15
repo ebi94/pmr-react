@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fd227004b5b436f253f80d72d62647dd",
+    "revision": "2bebb0a4821c4349033bf547150b637a",
     "url": "/index.html"
   },
   {
-    "revision": "73e95958478a80da7919",
-    "url": "/static/css/main.a2c0cc9b.chunk.css"
+    "revision": "92d251515bb7c4954862",
+    "url": "/static/css/main.860a87ab.chunk.css"
   },
   {
-    "revision": "7683cb3aa854e9938051",
-    "url": "/static/js/2.0ca2f606.chunk.js"
+    "revision": "da912e659aa72e64761f",
+    "url": "/static/js/2.69fa97e3.chunk.js"
   },
   {
-    "revision": "73e95958478a80da7919",
-    "url": "/static/js/main.ecf3c030.chunk.js"
+    "revision": "92d251515bb7c4954862",
+    "url": "/static/js/main.e3ed3382.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -62,6 +62,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "089c4f4e55f158a69d0364c6b6339f37",
     "url": "/static/media/eva.089c4f4e.jpg"
+  },
+  {
+    "revision": "f6859de52b208fcf2fa07687e03b18be",
+    "url": "/static/media/flour.f6859de5.jpg"
   },
   {
     "revision": "bb8bf479212367bf983cc2da23938adb",
@@ -120,8 +124,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/profile.225653f9.jpg"
   },
   {
+    "revision": "8e5563d667c6309934b0b9907522135c",
+    "url": "/static/media/pt-triwijaya-sari-logo.8e5563d6.png"
+  },
+  {
+    "revision": "41e2d381544fe2ff49076d6ea79e367d",
+    "url": "/static/media/rice.41e2d381.jpg"
+  },
+  {
     "revision": "f217f346c88e5fb2720ca7c28827ff72",
     "url": "/static/media/ryan.f217f346.jpg"
+  },
+  {
+    "revision": "82b9583ea47a76cdb130699b0417f8a0",
+    "url": "/static/media/sugar.82b9583e.jpg"
   },
   {
     "revision": "93daaa81654c1d4c616ad299a790aa31",

@@ -8,6 +8,12 @@ import {
 } from "reactstrap";
 // Image
 import noImage from "../../assets/img/no-image.png";
+import client1 from "../../assets/img/client/asia-trade-logo.png";
+import client2 from "../../assets/img/client/bt-cocoa-logo.png";
+import client3 from "../../assets/img/client/bulog-logo.jpg";
+import client4 from "../../assets/img/client/ypslogo.png";
+import client5 from "../../assets/img/client/cv-ukb-logo.png";
+import client6 from "../../assets/img/client/pt-triwijaya-sari-logo.png";
 // core components
 import ClientItem from "../../components/ClientItem/IndexClientItem.js";
 
@@ -21,26 +27,26 @@ function ProductListElements() {
           <div id="client-list">
             <Row>
               <Col lg="2" sm="4" className="client-list-item">
-                <ClientItem image={noImage} text="Client 1" />
+                <ClientItem image={client1} text="Client 1" />
               </Col>
               <Col lg="2" sm="4" className="client-list-item">
-                <ClientItem image={noImage} text="Client 2" />
+                <ClientItem image={client2} text="Client 2" />
               </Col>
               <Col lg="2" sm="4" className="client-list-item">
-                <ClientItem image={noImage} text="Client 3" />
+                <ClientItem image={client3} text="Client 3" />
               </Col>
               <Col lg="2" sm="4" className="client-list-item">
-                <ClientItem image={noImage} text="Client 4" />
+                <ClientItem image={client4} text="Client 4" />
               </Col>
               <Col lg="2" sm="4" className="client-list-item">
-                <ClientItem image={noImage} text="Client 5" />
+                <ClientItem image={client5} text="Client 5" />
               </Col>
               <Col lg="2" sm="4" className="client-list-item">
-                <ClientItem image={noImage} text="Client 6" />
+                <ClientItem image={client6} text="Client 6" />
               </Col>
             </Row>
             <div className="space-70"></div>
-            <Row>
+            {/* <Row>
               <Col lg="2" sm="4" className="client-list-item">
                 <ClientItem image={noImage} text="Client 1" />
               </Col>
@@ -59,7 +65,7 @@ function ProductListElements() {
               <Col lg="2" sm="4" className="client-list-item">
                 <ClientItem image={noImage} text="Client 6" />
               </Col>
-            </Row>
+            </Row> */}
           </div>
         </Container>
       </div>

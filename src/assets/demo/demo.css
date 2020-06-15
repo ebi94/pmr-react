@@ -548,11 +548,11 @@
 }
 
 .box-client-item {
-  width: 100px;
-  height: 100px;
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
   position: relative;
-  margin-bottom: 50px;
-  display: inline-block;
+  display: table-cell;
 }
 
 .btn-get-quote-item {

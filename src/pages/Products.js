@@ -6,7 +6,7 @@ import React from "react";
 
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import IndexHeader from "components/Headers/IndexHeader.js";
+import BackgroundPageHeader from "components/Headers/BackgroundPageHeader.js";
 import CustomFooter from "components/Footers/CustomFooter.js";
 
 // sections for this page
@@ -17,7 +17,7 @@ function Products() {
     <>
       <IndexNavbar />
       <div className="wrapper">
-        <IndexHeader />
+        <BackgroundPageHeader titlePage="Products" backgroundImage={"url(" + require("assets/img/flour.jpg") + ")"} />
         <div className="main">
             <ProductDetailElement />
         </div>

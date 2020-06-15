@@ -6,7 +6,7 @@ import React from "react";
 
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import IndexHeader from "components/Headers/IndexHeader.js";
+import BackgroundPageHeader from "components/Headers/BackgroundPageHeader.js";
 import CustomFooter from "components/Footers/CustomFooter.js";
 
 // sections for this page
@@ -19,7 +19,7 @@ function AboutUs() {
     <>
       <IndexNavbar />
       <div className="wrapper">
-        <IndexHeader />
+        <BackgroundPageHeader titlePage="About Us" backgroundImage={"url(" + require("assets/img/sugar.jpg") + ")"}/>
         <div className="main">
             <AboutUsElements />
             <AboutUsImageElements />
