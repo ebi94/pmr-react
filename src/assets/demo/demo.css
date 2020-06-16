@@ -576,3 +576,17 @@
   bottom: 220px;
   right: 50%;
 }
+
+#alert-notification {
+  display: flex;
+  z-index: 10000;
+  overflow: hidden;
+  position: fixed;
+  top: 90px;
+  left: 0;
+  width: 100%;
+}
+
+.button-submit-form {
+  min-width: 110px;
+}

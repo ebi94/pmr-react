@@ -14,7 +14,6 @@ import AboutUsElements from "./index-sections/AboutUsElements.js";
 import ProductListElements from "./index-sections/ProductListElements.js";
 import ClientListElements from "./index-sections/ClientListElement.js";
 import ContactUsElements from "./index-sections/ContactUsElements.js";
-import ContactUs from "pages/ContactUs.js";
 
 function Index() {
   React.useEffect(() => {

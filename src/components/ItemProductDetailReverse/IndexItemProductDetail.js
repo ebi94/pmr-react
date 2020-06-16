@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 // reactstrap components
@@ -7,17 +7,25 @@ import {
     Col,
     Button,
     Modal,
-    ModalBody,
-    Form,
-    FormGroup,
-    Input
+    ModalBody
 } from "reactstrap";
 
 // core components
+import FormGetQuote from "../../components/FormGetQuote/IndexFormGetQuote.js";
+import Notification from "components/Notification/IndexNotification";
 
 const IndexProductItemDetail = props => {
     const { title, description, image} = props;
-    const [modal, setModal] = React.useState(false);
+    const [modal, setModal] = useState(false);
+    const [showNotify, setShowNotify] = useState(true);
+    const [color, setColor] = useState('info');
+    const [textNotify, setTextNotify] = useState('');
+
+    React.useEffect(() => {
+        setTimeout(() => {
+            setShowNotify(false);
+        }, 3000);
+    }, [showNotify])
 
   return (
     <>
@@ -62,65 +70,18 @@ const IndexProductItemDetail = props => {
                     <h4 className="title title-up">Get Quote</h4>
             </div>
             <ModalBody>
-                <Form>
-                    <FormGroup>
-                        <label htmlFor="inputName">Name</label>
-                        <Input
-                            id="inputName"
-                            placeholder="Name"
-                            type="text"
-                        ></Input>
-                    </FormGroup>
-                    <FormGroup>
-                        <label htmlFor="inputPhone">Phone</label>
-                        <Input
-                            id="inputPhone"
-                            placeholder="08123456789"
-                            type="text"
-                        ></Input>
-                    </FormGroup>
-                    <FormGroup>
-                        <label htmlFor="inputEmail">Email</label>
-                        <Input
-                            id="inputEmail"
-                            placeholder="example@email.com"
-                            type="text"
-                        ></Input>
-                    </FormGroup>
-                    <FormGroup>
-                        <label htmlFor="inputProduct">Product</label>
-                        <Input
-                            id="inputProduct"
-                            placeholder={title}
-                            value={title}
-                            type="text"
-                            disabled
-                        ></Input>
-                    </FormGroup>
-                    <FormGroup>
-                        <label htmlFor="inputAddress">Address</label>
-                        <Input
-                            id="inputAddress"
-                            placeholder="City, Province, Street"
-                            type="text"
-                        ></Input>
-                    </FormGroup>
-                    <FormGroup>
-                        <label htmlFor="inputMessage">Message</label>
-                        <Input
-                            id="inputMessage"
-                            placeholder="Type a message . . ."
-                            type="textarea"
-                        ></Input>
-                    </FormGroup>
-                    <Button color="secondary" type="submit">
-                        Submit
-                    </Button>
-                </Form>
+                <FormGetQuote 
+                    title={title} 
+                    modal={modal => setModal(modal)}
+                    textNotify={textNotify => setTextNotify(textNotify)}
+                    color={color => setColor(color)}
+                    alert={alert => setShowNotify(alert)}
+                />
             </ModalBody>
             <div className="modal-footer">
             </div>
         </Modal>
+        <Notification text={textNotify} color={color} alert={showNotify} />
     </>
   );
 }

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 // reactstrap components
 import {
@@ -13,8 +14,61 @@ import {
 
 // core components
 import GoogleMaps from '../../components/GoogleMaps/IndexGoogleMaps.js';
+import Notification from 'components/Notification/IndexNotification.js';
 
-function ContactUsElements() {
+const ContactUsElements = () => {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+    const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [showNotify, setShowNotify] = useState(false);
+    const [color, setColor] = useState('info');
+    const [textNotify, setTextNotify] = useState('');
+
+    const submit = () => {
+        setLoading(true);
+        axios({
+            method: "POST", 
+            url: process.env.REACT_APP_FORMSPREE_URL, 
+            data:  {
+                From: name,
+                Email: email,
+                Phone: phone,
+                Address: address,
+                Message: message
+            }
+          }).then((response)=>{
+            resetState();
+            setShowNotify(true);
+            setTextNotify('Message has been send')
+            setColor('success');
+            setLoading(false);
+            setTimeout(() => {
+                setShowNotify(false);
+                }, 3000);
+          })
+          .catch((error)=>{
+            setTextNotify(`Error ! ${error.response.data.error}`)
+            setColor('danger');
+            setShowNotify(true);
+            setLoading(false);
+            setTimeout(() => {
+                setShowNotify(false);
+                }, 3000);
+          })
+    }
+
+    const resetState = () => {
+        setName('');
+        setEmail('');
+        setPhone('');
+        setAddress('');
+        setMessage('');
+    }
+
   return (
     <>
         <div className="section section-basic" id="basic-elements">
@@ -30,6 +84,8 @@ function ContactUsElements() {
                                     id="inputName"
                                     placeholder="Name"
                                     type="text"
+                                    onChange={event => setName(event.target.value)}
+                                    value={name}
                                 ></Input>
                             </FormGroup>
                             <FormGroup>
@@ -38,6 +94,8 @@ function ContactUsElements() {
                                     id="inputPhone"
                                     placeholder="08123456789"
                                     type="text"
+                                    onChange={event => setPhone(event.target.value)}
+                                    value={phone}
                                 ></Input>
                             </FormGroup>
                             <FormGroup>
@@ -46,6 +104,8 @@ function ContactUsElements() {
                                     id="inputEmail"
                                     placeholder="example@email.com"
                                     type="text"
+                                    onChange={event => setEmail(event.target.value)}
+                                    value={email}
                                 ></Input>
                             </FormGroup>
                             <FormGroup>
@@ -54,6 +114,8 @@ function ContactUsElements() {
                                     id="inputAddress"
                                     placeholder="City, Province, Street"
                                     type="text"
+                                    onChange={event => setAddress(event.target.value)}
+                                    value={address}
                                 ></Input>
                             </FormGroup>
                             <FormGroup>
@@ -62,10 +124,17 @@ function ContactUsElements() {
                                     id="inputMessage"
                                     placeholder="Type a message . . ."
                                     type="textarea"
+                                    onChange={event => setMessage(event.target.value)}
+                                    value={message}
                                 ></Input>
                             </FormGroup>
-                            <Button color="secondary" type="submit">
-                                Submit
+                            <Button 
+                                color="secondary" 
+                                onClick={() => submit()}
+                                disabled={loading}
+                                className="button-submit-form"
+                            >
+                                {loading ?  (<i className="now-ui-icons loader_refresh spin"></i>) : 'Submit'}
                             </Button>
                         </Form>
                         </Col>
@@ -103,6 +172,7 @@ function ContactUsElements() {
                 </div>
         </Container>
       </div>
+      <Notification text={textNotify} color={color} alert={showNotify} />
     </>
   );
 }

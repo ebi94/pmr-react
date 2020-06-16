@@ -7,7 +7,6 @@ import {
   Col
 } from "reactstrap";
 // Image
-import noImage from "../../assets/img/no-image.png";
 import client1 from "../../assets/img/client/asia-trade-logo.png";
 import client2 from "../../assets/img/client/bt-cocoa-logo.png";
 import client3 from "../../assets/img/client/bulog-logo.jpg";
