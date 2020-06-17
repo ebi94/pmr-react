@@ -35,18 +35,24 @@ const IndexFormGetQuote = props => {
                 Message: message
             }
           }).then((response)=>{
-            resetState();
-            alert(true);
-            textNotify('Message has been send')
-            color('success');
-            setLoading(false);
-            modal(false)
+            console.log('response');
+            console.log(response);
+            if (response.status === 200) {
+                resetState();
+                alert(true);
+                textNotify('Message has been send')
+                color('success');
+                setLoading(false);
+                modal(false);
+                console.log('berhasil');
+              }
           })
           .catch((error)=>{
-            textNotify(`Error ! ${error.response.data.error}`)
+            textNotify(`Error ! ${error && error.response && error.response.data && error.response.data.error}`)
             color('danger');
             alert(true);
             setLoading(false);
+            console.log('gagal');
           })
     }
 

@@ -41,17 +41,19 @@ const ContactUsElements = () => {
                 Message: message
             }
           }).then((response)=>{
-            resetState();
-            setShowNotify(true);
-            setTextNotify('Message has been send')
-            setColor('success');
-            setLoading(false);
-            setTimeout(() => {
-                setShowNotify(false);
+              if (response.status === 200) {
+                resetState();
+                setShowNotify(true);
+                setTextNotify('Message has been send')
+                setColor('success');
+                setLoading(false);
+                setTimeout(() => {
+                    setShowNotify(false);
                 }, 3000);
+              }
           })
           .catch((error)=>{
-            setTextNotify(`Error ! ${error.response.data.error}`)
+            setTextNotify(`Error ! ${error && error.response && error.response.data && error.response.data.error}`)
             setColor('danger');
             setShowNotify(true);
             setLoading(false);
@@ -147,7 +149,7 @@ const ContactUsElements = () => {
                                 <p>Jl. Smapal No. 9 Lengkong Gudang Serpong</p>
                                 <p>Tangerang Selatan 15311</p>
                             </div>
-                            <h4>Head Office</h4>
+                            <h4>Warehouse</h4>
                             <div>
                                 <p>Depo Tanjung Priuk, Jakarta.</p>
                                 <p>Jakarta, Lampung dan Jawa</p>

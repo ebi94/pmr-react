@@ -1,45 +1,16 @@
 import React from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
  
-const containerStyle = {
-  width: '100%',
-  height: '400px'
-};
- 
-const center = {
-  lat: 106.6722237,
-  lng: -6.2828813
-};
- 
-function MyComponent() {
-  const [map, setMap] = React.useState(null)
- 
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map)
-  }, [])
- 
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
-  }, [])
- 
+const GoogleMap = () => {
+
   return (
-    <LoadScript
-      googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAP_API}
-    >
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-      </GoogleMap>
-    </LoadScript>
+    <>
+      <div className="mapouter">
+        <div className="gmap_canvas">
+          <iframe title="google-map" src="https://maps.google.com/maps?q=NCB%20BUildin&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>      
+        </div>
+      </div>
+    </>
   )
 }
  
-export default React.memo(MyComponent)
+export default GoogleMap;

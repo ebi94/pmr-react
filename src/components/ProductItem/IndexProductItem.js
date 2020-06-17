@@ -9,16 +9,8 @@ import {
 // core components
 
 const IndexProductItem = props => {
-    const { text, image} = props;
+    const { text, image, openGetQuote} = props;
     const [showQuote, setShowQuote] = React.useState(false);
-
-    const handleMouseHover = () => {
-        if(showQuote === true){
-            setShowQuote(false)
-        }else{
-            setShowQuote(true)
-        }
-    }
 
   return (
     <>
@@ -28,17 +20,17 @@ const IndexProductItem = props => {
                 className="rounded img-raised img-product"
                 src={image}
                 // src={require({image})}
-                onMouseEnter={() => handleMouseHover()}
-                onMouseLeave={() => handleMouseHover()}
+                onMouseEnter={() => setShowQuote(true)}
+                onMouseLeave={() => setShowQuote(false)}
                 ></img>
             <h4>{text}</h4>
             {showQuote && (
                 <Button 
-                    className="btn-round btn-get-quote-item" 
-                    color="info" 
-                    outline type="button" 
-                    onMouseEnter={() => setShowQuote(true)}
-                    onMouseLeave={() => setShowQuote(true)}>
+                    className="btn btn-primary btn-get-quote-item" 
+                    color="primary" 
+                    type="button"
+                    onClick={openGetQuote}
+                    onMouseEnter={() => setShowQuote(true)}>
                         Get Quote
                 </Button>
             )}
@@ -54,7 +46,8 @@ IndexProductItem.defaultProps = {
 
 IndexProductItem.propTypes = {
 	text: PropTypes.string,
-	image: PropTypes.string
+    image: PropTypes.string,
+    openGetQuote: PropTypes.func.isRequired
 };
 
 export default IndexProductItem;

@@ -17,7 +17,7 @@ import Notification from "components/Notification/IndexNotification";
 const IndexProductItemDetail = props => {
     const { title, description, image} = props;
     const [modal, setModal] = useState(false);
-    const [showNotify, setShowNotify] = useState(true);
+    const [showNotify, setShowNotify] = useState(false);
     const [color, setColor] = useState('info');
     const [textNotify, setTextNotify] = useState('');
 
@@ -36,9 +36,9 @@ const IndexProductItemDetail = props => {
                         <h3>{title}</h3>
                         <p>{description}</p>
                         <Button 
-                            className="btn-round btn-get-quote-product-detail" 
-                            color="info" 
-                            outline type="button"
+                            className="btn btn-primary btn-get-quote-product-detail" 
+                            color="primary" 
+                            type="button"
                             onClick={() => setModal(true)}>
                                 Get Quote
                         </Button>

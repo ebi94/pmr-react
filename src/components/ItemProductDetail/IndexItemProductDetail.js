@@ -46,9 +46,9 @@ const IndexProductItemDetail = props => {
                         <h3>{title}</h3>
                         <p>{description}</p>
                         <Button 
-                            className="btn-round btn-get-quote-product-detail" 
-                            color="info" 
-                            outline type="button"
+                            className="btn btn-primary btn-get-quote-product-detail" 
+                            color="primary" 
+                            type="button"
                             onClick={() => setModal(true)}>
                                 Get Quote
                         </Button>
