@@ -42,7 +42,7 @@ function AboutUsElements() {
                   <li><h4>Menjalankan bisnis secara komersial dengan prinsip tata kelola yang baik dan manajemen resiko yang efektif.</h4></li>
                   <li><h4>Menyediakan produk dan jasa yang berdaya saing tinggi</h4></li>
                   <li><h4>Mengembangkan bisnis inti dan turunan serta portofolio bisnis yang saling bersinergi</h4></li>
-                  <li><h4>Memberikan manfaat dan nilai tambah yang maksimal kepada perusahaan dan pemangku kepentingan</h4></li>ebimaydi1204
+                  <li><h4>Memberikan manfaat dan nilai tambah yang maksimal kepada perusahaan dan pemangku kepentingan</h4></li>
                 </ul>
             <div className="space-70"></div>
             <h3 className="text-logo-about">Who we are</h3>
