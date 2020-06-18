@@ -79,7 +79,7 @@ const ContactUsElements = () => {
                 <div>
                     <Row>
                         <Col lg="6" sm="12" className="footer-list-item">
-                        <Form>
+                        <Form className="form-contact-us">
                             <FormGroup>
                                 <label htmlFor="inputName">Name</label>
                                 <Input

@@ -59,8 +59,8 @@ function IndexSlider() {
   };
   return (
     <>
-        <Row className="justify-content-center">
-        <Col md="12">
+        {/* <Row className="justify-content-center"> */}
+        <Col md="12" className="box-slider">
             <Carousel
             activeIndex={activeIndex}
             next={next}
@@ -112,7 +112,7 @@ function IndexSlider() {
             </a>
             </Carousel>
         </Col>
-        </Row>
+        {/* </Row> */}
     </>
   );
 }

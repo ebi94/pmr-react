@@ -17,7 +17,7 @@ const IndexProductItem = props => {
         <div className="box-product-item">
             <img
                 alt={text}
-                className="rounded img-raised img-product"
+                className="rounded img-raised img-product-home"
                 src={image}
                 // src={require({image})}
                 onMouseEnter={() => setShowQuote(true)}

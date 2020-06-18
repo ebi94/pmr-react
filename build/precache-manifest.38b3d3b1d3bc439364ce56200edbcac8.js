@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "29c7104a553f5fb1203ef7a3f8491ee9",
+    "revision": "f3ccc2f3c5d17d6c7d23bd66f5ca3108",
     "url": "/index.html"
   },
   {
-    "revision": "98e2ef1b9a9969b11129",
-    "url": "/static/css/main.47109292.chunk.css"
+    "revision": "e52623f17398a9b47234",
+    "url": "/static/css/main.55fe8c2b.chunk.css"
   },
   {
-    "revision": "e3018390060e8d1b149f",
-    "url": "/static/js/2.e4b308e7.chunk.js"
+    "revision": "0e0663a0b1f98effbe2f",
+    "url": "/static/js/2.b6528e20.chunk.js"
   },
   {
-    "revision": "98e2ef1b9a9969b11129",
-    "url": "/static/js/main.a9c16d82.chunk.js"
+    "revision": "e52623f17398a9b47234",
+    "url": "/static/js/main.bea97406.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -22,6 +22,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7257a1a94be550133f3233fd792ee724",
     "url": "/static/media/avatar.7257a1a9.jpg"
+  },
+  {
+    "revision": "a48d8a9b8ee4713fde404f1611adc3bc",
+    "url": "/static/media/beras.a48d8a9b.jpg"
   },
   {
     "revision": "dc6bcc14102abbaee92f15d3bfa183d3",
@@ -68,6 +72,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/flour.f6859de5.jpg"
   },
   {
+    "revision": "52e55cced5cd490678072a8d58e5b75e",
+    "url": "/static/media/gula.52e55cce.jpg"
+  },
+  {
     "revision": "bb8bf479212367bf983cc2da23938adb",
     "url": "/static/media/gula.bb8bf479.jpg"
   },
@@ -98,6 +106,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0b6ff5c51f355dd5bcac68627238795e",
     "url": "/static/media/logo-panin-masinda-raya.0b6ff5c5.png"
+  },
+  {
+    "revision": "2378a5469b4f53dece918dcdf7dd5d33",
+    "url": "/static/media/minyak-goreng.2378a546.jpg"
   },
   {
     "revision": "d0c7a7e0a33975a25625d72aff3f4299",
@@ -138,6 +150,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "82b9583ea47a76cdb130699b0417f8a0",
     "url": "/static/media/sugar.82b9583e.jpg"
+  },
+  {
+    "revision": "1ab8dc16062a5f8f27dd17e16e7176a8",
+    "url": "/static/media/tepung-terigu.1ab8dc16.jpg"
   },
   {
     "revision": "93daaa81654c1d4c616ad299a790aa31",

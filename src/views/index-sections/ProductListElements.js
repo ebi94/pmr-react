@@ -9,7 +9,10 @@ import {
   ModalBody
 } from "reactstrap";
 // Image
-import noImage from "../../assets/img/no-image.png";
+import ImageBeras from "../../assets/img/product/beras.jpg";
+import ImageGula from "../../assets/img/product/gula.jpg";
+import ImageMinyak from "../../assets/img/product/minyak-goreng.jpg";
+import ImageTerigu from "../../assets/img/product/tepung-terigu.jpg";
 // core components
 import ProductItem from "../../components/ProductItem/IndexProductItem.js";
 import FormGetQuote from "components/FormGetQuote/IndexFormGetQuote.js";
@@ -37,7 +40,7 @@ const ProductListElements = () => {
             <Row>
               <Col lg="3" sm="6" className="product-list-item">
                 <ProductItem 
-                  image={noImage} 
+                  image={ImageBeras} 
                   text="Beras" 
                   openGetQuote={() => {
                     setTitle('Beras');
@@ -47,7 +50,7 @@ const ProductListElements = () => {
               </Col>
               <Col lg="3" sm="6" className="product-list-item">
                 <ProductItem
-                  image={noImage}
+                  image={ImageGula}
                   text="Gula" 
                   openGetQuote={() => {
                     setTitle('Gula');
@@ -57,7 +60,7 @@ const ProductListElements = () => {
               </Col>
               <Col lg="3" sm="6" className="product-list-item">
                 <ProductItem
-                  image={noImage}
+                  image={ImageMinyak}
                   text="Minyak Goreng"
                   openGetQuote={() => {
                     setTitle('Minyak Goreng');
@@ -67,7 +70,7 @@ const ProductListElements = () => {
               </Col>
               <Col lg="3" sm="6" className="product-list-item">
                 <ProductItem
-                  image={noImage}
+                  image={ImageTerigu}
                   text="Tepung Terigu"
                   openGetQuote={() => {
                     setTitle('Tepung Terigu');
