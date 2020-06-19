@@ -78,21 +78,22 @@ const ContactUsElements = () => {
             .post("send", {'version': 'v3.1'})
             .request({
                 "Messages":[
-                        {
-                                "From": {
-                                        "Email": "fromweb@paninmasindaraya.com",
-                                        "Name": "Mailjet Pilot"
-                                },
-                                "To": [
-                                        {
-                                                "Email": "febritriakbar@gmail.com",
-                                                "Name": "passenger 1"
-                                        }
-                                ],
-                                "Subject": "Your email flight plan!",
-                                "TextPart": "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!",
-                                "HTMLPart": "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!"
-                        }
+                    {
+                        "From": {
+                          "Email": "admin@demo.paninmasindaraya.com",
+                          "Name": "Demo"
+                        },
+                        "To": [
+                          {
+                            "Email": "febritriakbar@gmail.com",
+                            "Name": "Demo"
+                          }
+                        ],
+                        "Subject": "Greetings from Mailjet.",
+                        "TextPart": "My first Mailjet email",
+                        "HTMLPart": "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
+                        "CustomID": "AppGettingStartedTest"
+                      }
                 ]
             })
         request
