@@ -13,6 +13,17 @@ import CustomFooter from "components/Footers/CustomFooter.js";
 import ProductDetailElement from "../views/index-sections/ProductDetailElement.js"
 
 function Products() {
+  React.useEffect(() => {
+    document.body.classList.add("index-page");
+    document.body.classList.add("sidebar-collapse");
+    document.documentElement.classList.remove("nav-open");
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    return function cleanup() {
+      document.body.classList.remove("index-page");
+      document.body.classList.remove("sidebar-collapse");
+    };
+  });
   return (
     <>
       <IndexNavbar />

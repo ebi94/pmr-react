@@ -25,7 +25,7 @@ const IndexFormGetQuote = props => {
         setLoading(true);
         axios({
             method: "POST", 
-            url: process.env.REACT_APP_FORMSPREE_URL, 
+            url: process.env.REACT_APP_GETFROM_URL, 
             data:  {
                 From: name,
                 Email: email,
@@ -34,8 +34,8 @@ const IndexFormGetQuote = props => {
                 Product: title,
                 Message: message
             }
-          }).then((response)=>{
-            console.log('response');
+          })
+          .then((response)=>{
             console.log(response);
             if (response.status === 200) {
                 resetState();
@@ -44,15 +44,13 @@ const IndexFormGetQuote = props => {
                 color('success');
                 setLoading(false);
                 modal(false);
-                console.log('berhasil');
+              } else {
+                textNotify(`Error !}`)
+                color('danger');
+                alert(true);
+                setLoading(false);
+                console.log(response);
               }
-          })
-          .catch((error)=>{
-            textNotify(`Error ! ${error && error.response && error.response.data && error.response.data.error}`)
-            color('danger');
-            alert(true);
-            setLoading(false);
-            console.log('gagal');
           })
     }
 

@@ -32,15 +32,16 @@ const ContactUsElements = () => {
         setLoading(true);
         axios({
             method: "POST", 
-            url: process.env.REACT_APP_FORMSPREE_URL, 
+            url: process.env.REACT_APP_GETFROM_URL, 
             data:  {
-                From: name,
-                Email: email,
-                Phone: phone,
-                Address: address,
-                Message: message
+                name: name,
+                email: email,
+                phone: phone,
+                address: address,
+                message: message,
             }
           }).then((response)=>{
+              console.log(response);
               if (response.status === 200) {
                 resetState();
                 setShowNotify(true);
@@ -51,16 +52,17 @@ const ContactUsElements = () => {
                     setShowNotify(false);
                 }, 3000);
               }
-          })
-          .catch((error)=>{
-            setTextNotify(`Error ! ${error && error.response && error.response.data && error.response.data.error}`)
-            setColor('danger');
-            setShowNotify(true);
-            setLoading(false);
-            setTimeout(() => {
-                setShowNotify(false);
+            })
+            .catch((error)=>{
+                console.log(error);
+                setTextNotify(`Error ! ${error && error.response && error.response.data && error.response.data.error}`)
+                setColor('danger');
+                setShowNotify(true);
+                setLoading(false);
+                setTimeout(() => {
+                    setShowNotify(false);
                 }, 3000);
-          })
+            })
     }
 
     const resetState = () => {
@@ -71,43 +73,7 @@ const ContactUsElements = () => {
         setMessage('');
     }
 
-    const sendMailjet = () => {
-        const mailjet = require ('node-mailjet')
-        .connect(process.env.REACT_APP_MJ_APIKEY_PUBLIC, process.env.REACT_APP_MJ_APIKEY_PRIVATE)
-        const request = mailjet
-            .post("send", {'version': 'v3.1'})
-            .request({
-                "Messages":[
-                    {
-                        "From": {
-                          "Email": "admin@demo.paninmasindaraya.com",
-                          "Name": "Demo"
-                        },
-                        "To": [
-                          {
-                            "Email": "febritriakbar@gmail.com",
-                            "Name": "Demo"
-                          }
-                        ],
-                        "Subject": "Greetings from Mailjet.",
-                        "TextPart": "My first Mailjet email",
-                        "HTMLPart": "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
-                        "CustomID": "AppGettingStartedTest"
-                      }
-                ]
-            })
-        request
-            .then((result) => {
-                console.log('sukes');
-                console.log(result.body);
-            })
-            .catch((err) => {
-                console.log('gagal');
-                console.log(err.statusCode);
-        })
-    }
-
-  return (
+    return (
     <>
         <div className="section section-basic" id="basic-elements">
             <Container>
@@ -174,7 +140,6 @@ const ContactUsElements = () => {
                             >
                                 {loading ?  (<i className="now-ui-icons loader_refresh spin"></i>) : 'Submit'}
                             </Button>
-                            <Button onClick={() => sendMailjet()}>Test Mail Jet</Button>
                         </Form>
                         </Col>
                         <div className="space-70"></div>

@@ -1,17 +1,27 @@
-/*eslint-disable*/
 import React from "react";
+import PropTypes from "prop-types";
+import { MultiLang, Determinator } from "react-multi-language";
 
 // reactstrap components
 import { Container, Row, Col } from "reactstrap";
 
-function CustomFooter() {
+const CustomFooter = () =>  {
+  const [Language, setLanguage] = React.useState('en');
+
   return (
     <footer className="footer" data-background-color="black">
       <Container>
         <div>
             <Row>
               <Col lg="4" sm="12" className="footer-list-item">
-                <h4>Head Office</h4>
+                <h4>
+                  <Determinator>
+                    {{ 
+                      en: 'Head Office',
+                      id: 'Kantor Pusat'
+                    }}
+                  </Determinator>
+                </h4>
                 <div>
                     <p>NCB BUILDING</p>
                     <p>Jl. Smapal No. 9 Lengkong Gudang Serpong</p>
@@ -19,14 +29,28 @@ function CustomFooter() {
                 </div>
               </Col>
               <Col lg="4" sm="12" className="footer-list-item">
-                <h4>Warehouse</h4>
+                <h4>
+                  <Determinator>
+                    {{ 
+                      en: 'Warehouse',
+                      id: 'Gudang'
+                    }}
+                  </Determinator>
+                </h4>
                 <div>
                     <p>Depo Tanjung Priuk, Jakarta.</p>
                     <p>Jakarta, Lampung dan Jawa</p>
                 </div>
               </Col>
               <Col lg="4" sm="12" className="footer-list-item">
-                <h4>Contact</h4>
+                <h4>
+                  <Determinator>
+                    {{ 
+                      en: 'Contact',
+                      id: 'Kontak'
+                    }}
+                  </Determinator>
+                </h4>
                 <div>
                     <p>+6221 2148 0677</p>
                 </div>
@@ -54,11 +78,23 @@ function CustomFooter() {
           </ul>
         </nav>
         <div className="copyright" id="copyright">
-          Copyright © {new Date().getFullYear()}, PT Panin Masinda Raya | All rights reserved.
+          <div className="left-footer">
+            <Determinator>
+              {{ 
+                en: 'Language',
+                id: 'Bahasa'
+              }}
+            </Determinator> : <span onClick={() => setLanguage('en')}>EN</span> / <span onClick={() => setLanguage('id')}>ID</span></div>
+          <div>Copyright © {new Date().getFullYear()}, PT Panin Masinda Raya | All rights reserved.</div>
+          <MultiLang lang={Language} />
         </div>
       </Container>
     </footer>
   );
 }
+
+CustomFooter.propTypes = {
+  lang: PropTypes.func.isRequired
+};
 
 export default CustomFooter;

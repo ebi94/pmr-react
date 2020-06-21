@@ -584,6 +584,7 @@
   position: absolute;
   bottom: 220px;
   right: 0;
+  z-index: 1000;
 }
 
 #alert-notification {
@@ -668,4 +669,17 @@
   .product-detail-image {
     margin-bottom: 50px;
   }
+  .box-reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-footer {
+  float: left;
 }

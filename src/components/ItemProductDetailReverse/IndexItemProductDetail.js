@@ -30,7 +30,7 @@ const IndexProductItemDetail = props => {
   return (
     <>
         <div className="box-product-item-detail">
-            <Row>
+            <Row className="box-reverse">
                 <Col lg="6" sm="12">
                     <div className="product-detail-text">
                         <h3>{title}</h3>
