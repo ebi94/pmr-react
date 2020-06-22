@@ -15,7 +15,8 @@ import ProductListElements from "./index-sections/ProductListElements.js";
 import ClientListElements from "./index-sections/ClientListElement.js";
 import ContactUsElements from "./index-sections/ContactUsElements.js";
 
-function Index() {
+const Index = () =>  {
+  const [Language, setLanguage] = React.useState('en');
   React.useEffect(() => {
     document.body.classList.add("index-page");
     document.body.classList.add("sidebar-collapse");
@@ -29,7 +30,7 @@ function Index() {
   });
   return (
     <>
-      <IndexNavbar />
+      <IndexNavbar idLang={Language}/>
       <div className="wrapper">
         <IndexHeader />
         <div className="main">
@@ -38,7 +39,7 @@ function Index() {
           <ClientListElements />
           <ContactUsElements />
         </div>
-        <CustomFooter />
+        <CustomFooter onClickEn={() => setLanguage('en')} onClickId={() => setLanguage('id')} idLang={Language}/>
       </div>
     </>
   );

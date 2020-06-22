@@ -12,7 +12,8 @@ import CustomFooter from "components/Footers/CustomFooter.js";
 // sections for this page
 import ContactUsElements from "../views/index-sections/ContactUsElements.js";
 
-function ContactUs() {
+const ContactUs = () => {
+  const [Language, setLanguage] = React.useState('en');
   React.useEffect(() => {
     document.body.classList.add("index-page");
     document.body.classList.add("sidebar-collapse");
@@ -26,13 +27,13 @@ function ContactUs() {
   });
   return (
     <>
-      <IndexNavbar />
+      <IndexNavbar idLang={Language}/>
       <div className="wrapper">
         <BackgroundPageHeader titlePage="Contact Us" backgroundImage={"url(" + require("assets/img/rice.jpg") + ")"} />
         <div className="main">
           <ContactUsElements />
         </div>
-        <CustomFooter />
+        <CustomFooter onClickEn={() => setLanguage('en')} onClickId={() => setLanguage('id')} idLang={Language}/>
       </div>
     </>
   );

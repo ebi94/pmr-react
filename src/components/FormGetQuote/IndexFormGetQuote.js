@@ -135,7 +135,7 @@ const IndexFormGetQuote = props => {
 
 IndexFormGetQuote.propTypes = {
     title: PropTypes.string.isRequired,
-    modal: PropTypes.func.isRequired,
+    modal: PropTypes.bool.isRequired,
     textNotify: PropTypes.func.isRequired,
     color: PropTypes.func.isRequired,
     alert: PropTypes.func.isRequired

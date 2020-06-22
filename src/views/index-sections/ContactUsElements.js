@@ -153,8 +153,9 @@ const ContactUsElements = () => {
                             </div>
                             <h4>Warehouse</h4>
                             <div>
-                                <p>Depo Tanjung Priuk, Jakarta.</p>
-                                <p>Jakarta, Lampung dan Jawa</p>
+                                <p>Aeropolis Technopark Blok WH.BS.30</p>
+                                <p>Jalan Marsekal Suryadarma</p>
+                                <p>Neglasari, Kota Tangerang</p>
                             </div>
                             <h4>Contact</h4>
                             <div>

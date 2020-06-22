@@ -13,7 +13,8 @@ import CustomFooter from "components/Footers/CustomFooter.js";
 import AboutUsElements from "views/index-sections/AboutUsElements.js"
 import AboutUsImageElements from "views/index-sections/AboutUsImageElements.js"
 
-function AboutUs() {
+const AboutUs = () => {
+  const [Language, setLanguage] = React.useState('en');
   React.useEffect(() => {
     document.body.classList.add("index-page");
     document.body.classList.add("sidebar-collapse");
@@ -27,14 +28,14 @@ function AboutUs() {
   });
   return (
     <>
-      <IndexNavbar />
+      <IndexNavbar idLang={Language}/>
       <div className="wrapper">
         <BackgroundPageHeader titlePage="About Us" backgroundImage={"url(" + require("assets/img/sugar.jpg") + ")"}/>
         <div className="main">
             <AboutUsElements />
             <AboutUsImageElements />
         </div>
-        <CustomFooter />
+        <CustomFooter onClickEn={() => setLanguage('en')} onClickId={() => setLanguage('id')} idLang={Language}/>
       </div>
     </>
   );

@@ -1,5 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { MultiLang, Determinator } from "react-multi-language";
 // reactstrap components
 import {
   Collapse,
@@ -12,7 +14,8 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
-function IndexNavbar() {
+const IndexNavbar = props => {
+  const { idLang } = props;
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
@@ -84,7 +87,14 @@ function IndexNavbar() {
                   to="/"
                   tag={Link}
                 >
-                  <h4 className="text-menu">Home</h4>
+                  <h4 className="text-menu">
+                    <Determinator>
+                      {{ 
+                        en: 'Home',
+                        id: 'Beranda'
+                      }}
+                    </Determinator>
+                  </h4>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -92,7 +102,14 @@ function IndexNavbar() {
                   to="/about-us"
                   tag={Link}
                 >
-                  <h4 className="text-menu">About Us</h4>
+                  <h4 className="text-menu">
+                    <Determinator>
+                      {{ 
+                        en: 'About Us',
+                        id: 'Tentang Kami'
+                      }}
+                    </Determinator>
+                  </h4>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -100,7 +117,14 @@ function IndexNavbar() {
                   to="/products"
                   tag={Link}
                 >
-                  <h4 className="text-menu">Products</h4>
+                  <h4 className="text-menu">
+                    <Determinator>
+                      {{ 
+                        en: 'Products',
+                        id: 'Produk'
+                      }}
+                    </Determinator>
+                  </h4>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -108,7 +132,14 @@ function IndexNavbar() {
                   to="/contact-us"
                   tag={Link}
                 >
-                  <h4 className="text-menu">Contact Us</h4>
+                  <h4 className="text-menu">
+                    <Determinator>
+                      {{ 
+                        en: 'Contact Us',
+                        id: 'Kontak Kami'
+                      }}
+                    </Determinator>
+                  </h4>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -141,8 +172,13 @@ function IndexNavbar() {
           </Collapse>
         </Container>
       </Navbar>
+      <MultiLang lang={idLang} />
     </>
   );
 }
+
+IndexNavbar.propTypes = {
+  idLang: PropTypes.string.isRequired
+};
 
 export default IndexNavbar;

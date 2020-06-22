@@ -5,8 +5,8 @@ import { MultiLang, Determinator } from "react-multi-language";
 // reactstrap components
 import { Container, Row, Col } from "reactstrap";
 
-const CustomFooter = () =>  {
-  const [Language, setLanguage] = React.useState('en');
+const CustomFooter = props =>  {
+  const { onClickId, onClickEn, idLang } = props;
 
   return (
     <footer className="footer" data-background-color="black">
@@ -38,8 +38,9 @@ const CustomFooter = () =>  {
                   </Determinator>
                 </h4>
                 <div>
-                    <p>Depo Tanjung Priuk, Jakarta.</p>
-                    <p>Jakarta, Lampung dan Jawa</p>
+                    <p>Aeropolis Technopark Blok WH.BS.30</p>
+                    <p>Jalan Marsekal Suryadarma</p>
+                    <p>Neglasari, Kota Tangerang</p>
                 </div>
               </Col>
               <Col lg="4" sm="12" className="footer-list-item">
@@ -84,9 +85,9 @@ const CustomFooter = () =>  {
                 en: 'Language',
                 id: 'Bahasa'
               }}
-            </Determinator> : <span onClick={() => setLanguage('en')}>EN</span> / <span onClick={() => setLanguage('id')}>ID</span></div>
+            </Determinator> : <span onClick={onClickEn}>EN</span> / <span onClick={onClickId}>ID</span></div>
           <div>Copyright © {new Date().getFullYear()}, PT Panin Masinda Raya | All rights reserved.</div>
-          <MultiLang lang={Language} />
+          <MultiLang lang={idLang} />
         </div>
       </Container>
     </footer>
@@ -94,7 +95,9 @@ const CustomFooter = () =>  {
 }
 
 CustomFooter.propTypes = {
-  lang: PropTypes.func.isRequired
+  onClickId: PropTypes.func.isRequired,
+  onClickEn: PropTypes.func.isRequired,
+  idLang: PropTypes.string.isRequired
 };
 
 export default CustomFooter;

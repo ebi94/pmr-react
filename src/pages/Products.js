@@ -12,7 +12,8 @@ import CustomFooter from "components/Footers/CustomFooter.js";
 // sections for this page
 import ProductDetailElement from "../views/index-sections/ProductDetailElement.js"
 
-function Products() {
+const Products = () => {
+  const [Language, setLanguage] = React.useState('en');
   React.useEffect(() => {
     document.body.classList.add("index-page");
     document.body.classList.add("sidebar-collapse");
@@ -26,13 +27,13 @@ function Products() {
   });
   return (
     <>
-      <IndexNavbar />
+      <IndexNavbar idLang={Language}/>
       <div className="wrapper">
         <BackgroundPageHeader titlePage="Products" backgroundImage={"url(" + require("assets/img/flour.jpg") + ")"} />
         <div className="main">
             <ProductDetailElement />
         </div>
-        <CustomFooter />
+        <CustomFooter onClickEn={() => setLanguage('en')} onClickId={() => setLanguage('id')} idLang={Language}/>
       </div>
     </>
   );

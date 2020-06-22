@@ -1,6 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-// reactstrap components
 import {
   Col,
   Carousel,
@@ -8,32 +8,73 @@ import {
   CarouselIndicators
 } from "reactstrap";
 
-// core components
+import { MultiLang, Determinator } from "react-multi-language";
 
-const items = [
-  {
-    src: require("assets/img/slider/beras.jpg"),
-    altText: "Beras",
-    caption: "Beras"
-  },
-  {
-    src: require("assets/img/slider/gula.jpg"),
-    altText: "Gula",
-    caption: "Gula"
-  },
-  {
-    src: require("assets/img/slider/minyak-goreng.jpg"),
-    altText: "Minyak Goreng",
-    caption: "Minyak Goreng"
-  },
-  {
-    src: require("assets/img/slider/tepung-terigu.jpg"),
-    altText: "Tepung Terigu",
-    caption: "Tepung Terigu"
-  }
-];
+const IndexSlider = props => {
+  const { idLang } = props;
 
-function IndexSlider() {
+  const items = [
+    {
+      src: require("assets/img/slider/beras.jpg"),
+      altText: <Determinator>
+                {{ 
+                  en: 'Rice',
+                  id: 'Beras'
+                }}
+              </Determinator>,
+      caption: <Determinator>
+                {{ 
+                  en: 'Rice',
+                  id: 'Beras'
+                }}
+              </Determinator>
+    },
+    {
+      src: require("assets/img/slider/gula.jpg"),
+      altText: <Determinator>
+                {{ 
+                  en: 'Sugar',
+                  id: 'Gula'
+                }}
+              </Determinator>,
+      caption: <Determinator>
+                {{ 
+                  en: 'Sugar',
+                  id: 'Gula'
+                }}
+              </Determinator>
+    },
+    {
+      src: require("assets/img/slider/minyak-goreng.jpg"),
+      altText: <Determinator>
+                {{ 
+                  en: 'Oil',
+                  id: 'Minyak Goreng'
+                }}
+              </Determinator>,
+      caption: <Determinator>
+                {{ 
+                  en: 'Oil',
+                  id: 'Minyak Goreng'
+                }}
+              </Determinator>
+    },
+    {
+      src: require("assets/img/slider/tepung-terigu.jpg"),
+      altText: <Determinator>
+                {{ 
+                  en: 'Flour',
+                  id: 'Tepung Terigu'
+                }}
+              </Determinator>,
+      caption: <Determinator>
+                {{ 
+                  en: 'Flour',
+                  id: 'Tepung Terigu'
+                }}
+              </Determinator>
+    }
+  ];
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [animating, setAnimating] = React.useState(false);
   const onExiting = () => {
@@ -111,9 +152,18 @@ function IndexSlider() {
             </a>
             </Carousel>
         </Col>
+        <MultiLang lang={idLang} />
         {/* </Row> */}
     </>
   );
 }
+
+IndexSlider.defaultProps = {
+  idLang: 'en'
+};
+
+IndexSlider.propTypes = {
+  idLang: PropTypes.string
+};
 
 export default IndexSlider;

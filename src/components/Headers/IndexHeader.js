@@ -1,17 +1,26 @@
 /*eslint-disable*/
 import React from "react";
+import PropTypes from "prop-types";
 
 // core components
-import Carousel from "../Slider/IndexSlider.js";
+import IndexSlider from "../Slider/IndexSlider.js";
 
-function IndexHeader() {
-
+const IndexHeader = props => {
+  const { idLang } = props;
 
   return (
     <>
-      <Carousel />
+      <IndexSlider idLang={idLang} />
     </>
   );
 }
+
+IndexHeader.defaultProps = {
+  idLang: 'en'
+};
+
+IndexHeader.propTypes = {
+  idLang: PropTypes.string
+};
 
 export default IndexHeader;
