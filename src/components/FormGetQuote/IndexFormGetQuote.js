@@ -10,10 +10,10 @@ import {
     Input
 } from "reactstrap";
 
-// core components
+import { MultiLang, Determinator } from "react-multi-language";
 
 const IndexFormGetQuote = props => {
-    const { title, modal, textNotify, color, alert } = props;
+    const { title, modal, textNotify, color, alert, idLang } = props;
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
@@ -66,7 +66,14 @@ const IndexFormGetQuote = props => {
       <>
         <Form>
             <FormGroup>
-                <label htmlFor="inputName">Name</label>
+                <label htmlFor="inputName">
+                    <Determinator>
+                        {{ 
+                        en: 'Name',
+                        id: 'Nama'
+                        }}
+                    </Determinator>
+                </label>
                 <Input
                     id="inputName"
                     placeholder="Name"
@@ -76,7 +83,14 @@ const IndexFormGetQuote = props => {
                 ></Input>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="inputPhone">Phone</label>
+                <label htmlFor="inputPhone">
+                    <Determinator>
+                        {{ 
+                        en: 'Phone',
+                        id: 'No Telepon'
+                        }}
+                    </Determinator>
+                </label>
                 <Input
                     id="inputPhone"
                     placeholder="08123456789"
@@ -96,7 +110,14 @@ const IndexFormGetQuote = props => {
                 ></Input>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="inputProduct">Product</label>
+                <label htmlFor="inputProduct">
+                    <Determinator>
+                        {{ 
+                        en: 'Product',
+                        id: 'Produk'
+                        }}
+                    </Determinator>
+                </label>
                 <Input
                     id="inputProduct"
                     placeholder={title}
@@ -106,7 +127,14 @@ const IndexFormGetQuote = props => {
                 ></Input>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="inputAddress">Address</label>
+                <label htmlFor="inputAddress">
+                    <Determinator>
+                        {{ 
+                        en: 'Address',
+                        id: 'Alamat'
+                        }}
+                    </Determinator>
+                </label>
                 <Input
                     id="inputAddress"
                     placeholder="City, Province, Street"
@@ -116,7 +144,13 @@ const IndexFormGetQuote = props => {
                 ></Input>
             </FormGroup>
             <FormGroup>
-                <label htmlFor="inputMessage">Message</label>
+                <label htmlFor="inputMessage">
+                    <Determinator>
+                        {{ 
+                        en: 'Message',
+                        id: 'Pesan'
+                        }}
+                    </Determinator></label>
                 <Input
                     id="inputMessage"
                     placeholder="Type a message . . ."
@@ -129,6 +163,7 @@ const IndexFormGetQuote = props => {
                 {loading ?  (<i className="now-ui-icons loader_refresh spin"></i>) : 'Submit'}
             </Button>
         </Form>
+        <MultiLang lang={idLang} />
     </>
   );
 }
@@ -138,7 +173,8 @@ IndexFormGetQuote.propTypes = {
     modal: PropTypes.bool.isRequired,
     textNotify: PropTypes.func.isRequired,
     color: PropTypes.func.isRequired,
-    alert: PropTypes.func.isRequired
+    alert: PropTypes.func.isRequired,
+    idLang: PropTypes.string.isRequired
 };
 
 export default IndexFormGetQuote;

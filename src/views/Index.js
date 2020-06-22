@@ -32,12 +32,12 @@ const Index = () =>  {
     <>
       <IndexNavbar idLang={Language}/>
       <div className="wrapper">
-        <IndexHeader />
+        <IndexHeader idLang={Language}/>
         <div className="main">
           <AboutUsElements />
-          <ProductListElements />
+          <ProductListElements idLang={Language}/>
           <ClientListElements />
-          <ContactUsElements />
+          <ContactUsElements idLang={Language}/>
         </div>
         <CustomFooter onClickEn={() => setLanguage('en')} onClickId={() => setLanguage('id')} idLang={Language}/>
       </div>

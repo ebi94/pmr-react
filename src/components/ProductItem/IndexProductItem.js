@@ -45,7 +45,7 @@ IndexProductItem.defaultProps = {
 };
 
 IndexProductItem.propTypes = {
-	text: PropTypes.string,
+	text: PropTypes.object,
     image: PropTypes.string,
     openGetQuote: PropTypes.func.isRequired
 };

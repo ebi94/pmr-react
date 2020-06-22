@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 // reactstrap components
 import {
@@ -18,7 +19,10 @@ import ProductItem from "../../components/ProductItem/IndexProductItem.js";
 import FormGetQuote from "components/FormGetQuote/IndexFormGetQuote.js";
 import Notification from "components/Notification/IndexNotification.js";
 
-const ProductListElements = () => {
+import { MultiLang, Determinator } from "react-multi-language";
+
+const ProductListElements = props => {
+  const { idLang } = props;
   const [showModal, setShowModal] = useState(false);
   const [showNotify, setShowNotify] = useState(false);
   const [title, setTitle] = useState('');
@@ -35,15 +39,29 @@ const ProductListElements = () => {
     <>
       <div className="section section-tabs" id="product-list-elements">
         <Container>
-          <h2 className="title">Our Products</h2>
+          <h2 className="title">
+            <Determinator>
+              {{ 
+                en: 'Our Products',
+                id: 'Produk Kami'
+              }}
+            </Determinator>
+          </h2>
           <div id="product-list">
             <Row>
               <Col lg="3" sm="6" className="product-list-item">
                 <ProductItem 
                   image={ImageBeras} 
-                  text="Beras" 
+                  text={
+                    <Determinator>
+                      {{ 
+                        en: 'Rice',
+                        id: 'Beras'
+                      }}
+                    </Determinator>
+                  }
                   openGetQuote={() => {
-                    setTitle('Beras');
+                    setTitle('Rice / Beras');
                     setShowModal(true);
                   }}
                 />
@@ -51,9 +69,16 @@ const ProductListElements = () => {
               <Col lg="3" sm="6" className="product-list-item">
                 <ProductItem
                   image={ImageGula}
-                  text="Gula" 
+                  text={
+                    <Determinator>
+                      {{ 
+                        en: 'Sugar',
+                        id: 'Gula'
+                      }}
+                    </Determinator>
+                  }
                   openGetQuote={() => {
-                    setTitle('Gula');
+                    setTitle('Sugar / Gula');
                     setShowModal(true);
                   }}
                 />
@@ -61,9 +86,16 @@ const ProductListElements = () => {
               <Col lg="3" sm="6" className="product-list-item">
                 <ProductItem
                   image={ImageMinyak}
-                  text="Minyak Goreng"
+                  text={
+                    <Determinator>
+                      {{ 
+                        en: 'Oil',
+                        id: 'Minyak Goreng'
+                      }}
+                    </Determinator>
+                  }
                   openGetQuote={() => {
-                    setTitle('Minyak Goreng');
+                    setTitle('Oil / Minyak Goreng');
                     setShowModal(true);
                   }}
                 />
@@ -71,9 +103,16 @@ const ProductListElements = () => {
               <Col lg="3" sm="6" className="product-list-item">
                 <ProductItem
                   image={ImageTerigu}
-                  text="Tepung Terigu"
+                  text={
+                    <Determinator>
+                      {{ 
+                        en: 'Flour',
+                        id: 'Tepung Terigu'
+                      }}
+                    </Determinator>
+                  }
                   openGetQuote={() => {
-                    setTitle('Tepung Terigu');
+                    setTitle('Flour / Tepung Terigu');
                     setShowModal(true);
                   }}  
                 />
@@ -109,8 +148,13 @@ const ProductListElements = () => {
             </div>
         </Modal>
         <Notification text={textNotify} color={color} alert={showNotify} />
+        <MultiLang lang={idLang} />
     </>
   );
 }
+
+ProductListElements.propTypes = {
+  idLang: PropTypes.string.isRequired
+};
 
 export default ProductListElements;

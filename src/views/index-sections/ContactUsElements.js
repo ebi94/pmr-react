@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import axios from "axios";
 
 // reactstrap components
@@ -16,7 +17,10 @@ import {
 import GoogleMaps from '../../components/GoogleMaps/IndexGoogleMaps.js';
 import Notification from 'components/Notification/IndexNotification.js';
 
-const ContactUsElements = () => {
+import { MultiLang, Determinator } from "react-multi-language";
+
+const ContactUsElements = props => {
+    const { idLang } = props;
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -77,13 +81,27 @@ const ContactUsElements = () => {
     <>
         <div className="section section-basic" id="basic-elements">
             <Container>
-                <h2 className="title">Contact Us</h2>
+                <h2 className="title">
+                    <Determinator>
+                        {{ 
+                            en: 'Contact Us',
+                            id: 'Kontak Kami'
+                        }}
+                    </Determinator>
+                </h2>
                 <div>
                     <Row>
                         <Col lg="6" sm="12" className="footer-list-item">
                         <Form className="form-contact-us">
                             <FormGroup>
-                                <label htmlFor="inputName">Name</label>
+                                <label htmlFor="inputName">
+                                <Determinator>
+                                    {{ 
+                                        en: 'Name',
+                                        id: 'Nama'
+                                    }}
+                                </Determinator>
+                                </label>
                                 <Input
                                     id="inputName"
                                     placeholder="Name"
@@ -93,7 +111,14 @@ const ContactUsElements = () => {
                                 ></Input>
                             </FormGroup>
                             <FormGroup>
-                                <label htmlFor="inputPhone">Phone</label>
+                                <label htmlFor="inputPhone">
+                                <Determinator>
+                                    {{ 
+                                        en: 'Phone',
+                                        id: 'No Telepon'
+                                    }}
+                                </Determinator>
+                                </label>
                                 <Input
                                     id="inputPhone"
                                     placeholder="08123456789"
@@ -113,7 +138,14 @@ const ContactUsElements = () => {
                                 ></Input>
                             </FormGroup>
                             <FormGroup>
-                                <label htmlFor="inputAddress">Address</label>
+                                <label htmlFor="inputAddress">
+                                <Determinator>
+                                    {{ 
+                                        en: 'Address',
+                                        id: 'Alamat'
+                                    }}
+                                </Determinator>
+                                </label>
                                 <Input
                                     id="inputAddress"
                                     placeholder="City, Province, Street"
@@ -123,7 +155,14 @@ const ContactUsElements = () => {
                                 ></Input>
                             </FormGroup>
                             <FormGroup>
-                                <label htmlFor="inputMessage">Message</label>
+                                <label htmlFor="inputMessage">
+                                <Determinator>
+                                    {{ 
+                                        en: 'Message',
+                                        id: 'Pesan'
+                                    }}
+                                </Determinator>
+                                </label>
                                 <Input
                                     id="inputMessage"
                                     placeholder="Type a message . . ."
@@ -145,19 +184,40 @@ const ContactUsElements = () => {
                         <div className="space-70"></div>
                         <Col lg="6" sm="12" className="footer-list-item">
                             <h3 className="text-logo-about">PT. Panin Masinda Raya</h3>
-                            <h4>Head Office</h4>
+                            <h4>
+                                <Determinator>
+                                    {{ 
+                                        en: 'Head Office',
+                                        id: 'Kantor Utama'
+                                    }}
+                                </Determinator>
+                            </h4>
                             <div>
                                 <p>NCB BUILDING</p>
                                 <p>Jl. Smapal No. 9 Lengkong Gudang Serpong</p>
                                 <p>Tangerang Selatan 15311</p>
                             </div>
-                            <h4>Warehouse</h4>
+                            <h4>
+                                <Determinator>
+                                    {{ 
+                                        en: 'Warehouse',
+                                        id: 'Gudang'
+                                    }}
+                                </Determinator>
+                            </h4>
                             <div>
                                 <p>Aeropolis Technopark Blok WH.BS.30</p>
                                 <p>Jalan Marsekal Suryadarma</p>
                                 <p>Neglasari, Kota Tangerang</p>
                             </div>
-                            <h4>Contact</h4>
+                            <h4>
+                                <Determinator>
+                                    {{ 
+                                        en: 'Contact',
+                                        id: 'Kontak'
+                                    }}
+                                </Determinator>
+                            </h4>
                             <div>
                                 <p>+6221 2148 0677</p>
                             </div>
@@ -178,8 +238,13 @@ const ContactUsElements = () => {
         </Container>
       </div>
       <Notification text={textNotify} color={color} alert={showNotify} />
+      <MultiLang lang={idLang} />
     </>
   );
 }
+
+ContactUsElements.propTypes = {
+    idLang: PropTypes.string.isRequired
+  };
 
 export default ContactUsElements;
