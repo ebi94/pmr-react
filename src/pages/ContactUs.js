@@ -1,9 +1,5 @@
 import React from "react";
 
-// reactstrap components
-// import {
-// } from "reactstrap";
-
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import BackgroundPageHeader from "components/Headers/BackgroundPageHeader.js";
@@ -12,7 +8,10 @@ import CustomFooter from "components/Footers/CustomFooter.js";
 // sections for this page
 import ContactUsElements from "../views/index-sections/ContactUsElements.js";
 
+import { MultiLang, Determinator } from "react-multi-language";
+
 const ContactUs = () => {
+  
   const [Language, setLanguage] = React.useState('en');
   React.useEffect(() => {
     document.body.classList.add("index-page");
@@ -29,12 +28,22 @@ const ContactUs = () => {
     <>
       <IndexNavbar idLang={Language}/>
       <div className="wrapper">
-        <BackgroundPageHeader titlePage="Contact Us" backgroundImage={"url(" + require("assets/img/rice.jpg") + ")"} />
+        <BackgroundPageHeader
+          titlePage={
+            <Determinator>
+              {{ 
+                en: 'Contact Us',
+                id: 'Kontak Kami'
+              }}
+            </Determinator>
+          }
+          backgroundImage={"url(" + require("assets/img/rice.jpg") + ")"} />
         <div className="main">
-          <ContactUsElements />
+          <ContactUsElements idLang={Language}/>
         </div>
         <CustomFooter onClickEn={() => setLanguage('en')} onClickId={() => setLanguage('id')} idLang={Language}/>
       </div>
+      <MultiLang lang={Language} />
     </>
   );
 }

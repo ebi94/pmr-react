@@ -34,9 +34,9 @@ const Index = () =>  {
       <div className="wrapper">
         <IndexHeader idLang={Language}/>
         <div className="main">
-          <AboutUsElements />
+          <AboutUsElements idLang={Language}/>
           <ProductListElements idLang={Language}/>
-          <ClientListElements />
+          <ClientListElements idLang={Language}/>
           <ContactUsElements idLang={Language}/>
         </div>
         <CustomFooter onClickEn={() => setLanguage('en')} onClickId={() => setLanguage('id')} idLang={Language}/>

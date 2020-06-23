@@ -69,8 +69,8 @@ const IndexFormGetQuote = props => {
                 <label htmlFor="inputName">
                     <Determinator>
                         {{ 
-                        en: 'Name',
-                        id: 'Nama'
+                            en: 'Name',
+                            id: 'Nama'
                         }}
                     </Determinator>
                 </label>
@@ -86,8 +86,8 @@ const IndexFormGetQuote = props => {
                 <label htmlFor="inputPhone">
                     <Determinator>
                         {{ 
-                        en: 'Phone',
-                        id: 'No Telepon'
+                            en: 'Phone',
+                            id: 'No Telepon'
                         }}
                     </Determinator>
                 </label>
@@ -113,8 +113,8 @@ const IndexFormGetQuote = props => {
                 <label htmlFor="inputProduct">
                     <Determinator>
                         {{ 
-                        en: 'Product',
-                        id: 'Produk'
+                            en: 'Product',
+                            id: 'Produk'
                         }}
                     </Determinator>
                 </label>
@@ -130,8 +130,8 @@ const IndexFormGetQuote = props => {
                 <label htmlFor="inputAddress">
                     <Determinator>
                         {{ 
-                        en: 'Address',
-                        id: 'Alamat'
+                            en: 'Address',
+                            id: 'Alamat'
                         }}
                     </Determinator>
                 </label>
@@ -147,8 +147,8 @@ const IndexFormGetQuote = props => {
                 <label htmlFor="inputMessage">
                     <Determinator>
                         {{ 
-                        en: 'Message',
-                        id: 'Pesan'
+                            en: 'Message',
+                            id: 'Pesan'
                         }}
                     </Determinator></label>
                 <Input

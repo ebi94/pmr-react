@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // reactstrap components
 import {
@@ -16,13 +17,23 @@ import client6 from "../../assets/img/client/pt-triwijaya-sari-logo.png";
 // core components
 import ClientItem from "../../components/ClientItem/IndexClientItem.js";
 
-function ProductListElements() {
+import { MultiLang, Determinator } from "react-multi-language";
+
+const ClientListElements = props => {
+  const { idLang } = props;
 
   return (
     <>
       <div className="section section" id="client-list-elements">
         <Container>
-          <h2 className="title">Our Clients</h2>
+          <h2 className="title">
+            <Determinator>
+              {{ 
+                en: 'Our Clients',
+                id: 'Klien Kami'
+              }}
+            </Determinator>
+          </h2>
           <div id="client-list">
             <Row>
               <Col lg="2" sm="4" className="client-list-item">
@@ -67,9 +78,14 @@ function ProductListElements() {
             </Row> */}
           </div>
         </Container>
+        <MultiLang lang={idLang} />
       </div>
     </>
   );
 }
 
-export default ProductListElements;
+ClientListElements.propTypes = {
+  idLang: PropTypes.string.isRequired
+}
+
+export default ClientListElements;

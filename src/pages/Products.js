@@ -1,9 +1,5 @@
 import React from "react";
 
-// reactstrap components
-// import {
-// } from "reactstrap";
-
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import BackgroundPageHeader from "components/Headers/BackgroundPageHeader.js";
@@ -11,6 +7,8 @@ import CustomFooter from "components/Footers/CustomFooter.js";
 
 // sections for this page
 import ProductDetailElement from "../views/index-sections/ProductDetailElement.js"
+
+import { MultiLang, Determinator } from "react-multi-language";
 
 const Products = () => {
   const [Language, setLanguage] = React.useState('en');
@@ -29,12 +27,22 @@ const Products = () => {
     <>
       <IndexNavbar idLang={Language}/>
       <div className="wrapper">
-        <BackgroundPageHeader titlePage="Products" backgroundImage={"url(" + require("assets/img/flour.jpg") + ")"} />
+        <BackgroundPageHeader
+          titlePage={
+            <Determinator>
+              {{ 
+                  en: 'Products',
+                  id: 'Produk'
+              }}
+            </Determinator>
+          }
+          backgroundImage={"url(" + require("assets/img/flour.jpg") + ")"} />
         <div className="main">
-            <ProductDetailElement />
+            <ProductDetailElement idLang={Language}/>
         </div>
         <CustomFooter onClickEn={() => setLanguage('en')} onClickId={() => setLanguage('id')} idLang={Language}/>
       </div>
+      <MultiLang lang={Language}/>
     </>
   );
 }
