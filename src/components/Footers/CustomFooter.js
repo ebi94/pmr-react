@@ -56,7 +56,7 @@ const CustomFooter = props =>  {
                     <p>+6221 2148 0677</p>
                 </div>
                 <div>
-                    <p>info@paninmasindaraya.com</p>
+                    <p>admin@paninmasindaraya.com</p>
                 </div>
                 <div>
                     <p>sales@paninmasindaraya.com</p>

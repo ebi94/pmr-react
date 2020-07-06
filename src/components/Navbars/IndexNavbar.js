@@ -16,27 +16,27 @@ import {
 
 const IndexNavbar = props => {
   const { idLang } = props;
-  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
+  // const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
-  React.useEffect(() => {
-    const updateNavbarColor = () => {
-      if (
-        document.documentElement.scrollTop > 399 ||
-        document.body.scrollTop > 399
-      ) {
-        setNavbarColor("");
-      } else if (
-        document.documentElement.scrollTop < 400 ||
-        document.body.scrollTop < 400
-      ) {
-        setNavbarColor("navbar-transparent");
-      }
-    };
-    window.addEventListener("scroll", updateNavbarColor);
-    return function cleanup() {
-      window.removeEventListener("scroll", updateNavbarColor);
-    };
-  });
+  // React.useEffect(() => {
+  //   const updateNavbarColor = () => {
+  //     if (
+  //       document.documentElement.scrollTop > 399 ||
+  //       document.body.scrollTop > 399
+  //     ) {
+  //       setNavbarColor("");
+  //     } else if (
+  //       document.documentElement.scrollTop < 400 ||
+  //       document.body.scrollTop < 400
+  //     ) {
+  //       setNavbarColor("navbar-transparent");
+  //     }
+  //   };
+  //   window.addEventListener("scroll", updateNavbarColor);
+  //   return function cleanup() {
+  //     window.removeEventListener("scroll", updateNavbarColor);
+  //   };
+  // });
   return (
     <>
       {collapseOpen ? (
@@ -48,7 +48,8 @@ const IndexNavbar = props => {
           }}
         />
       ) : null}
-      <Navbar className={"fixed-top " + navbarColor} expand="lg" color="info">
+      {/* <Navbar className={"fixed-top " + navbarColor} expand="lg" color="info"> */}
+      <Navbar className={"fixed-top"} expand="lg" color="info">
         <Container>
           <div className="navbar-translate">
             <NavbarBrand
